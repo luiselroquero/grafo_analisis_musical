@@ -88,7 +88,7 @@ class RedTransitiva:
     def cargar_red(self):
         raiz = tk.Tk()
         raiz.withdraw()
-        # ruta = filedialog.askopenfilename()
+        #ruta = filedialog.askopenfilename()
         ruta = "relaciones_transito.txt"
         f = open(ruta, "r")
         s = f.read()
@@ -229,17 +229,17 @@ class RedTransitiva:
                 return self.distancia_menor_mayor(conjunto1, conjunto2)
 
     def first_card(self, cardinalidad):
-        for i in range(0, len(self.elementos_cargados)):
-            if self.elementos_cargados[i].card == cardinalidad:
+        for i in range(0, len(self.red_transitiva_set_class)):
+            if self.red_transitiva_set_class[i].card == cardinalidad:
                 return i
             else:
-                if i == len(self.elementos_cargados) - 1:
+                if i == len(self.red_transitiva_set_class) - 1:
                     return -2
 
     def last_card(self, cardinalidad):
         temp = (self.first_card(cardinalidad - 1)) - 1
         if temp == -3:
-            return len(self.elementos_cargados)
+            return len(self.red_transitiva_set_class)
         else:
             return temp
 
@@ -291,13 +291,14 @@ class RedTransitiva:
         else:
             return False
 
-    def armar_red(self):
+    def armar_red(self): # ESTE ES EL QUE DEBO MODIFICAR PARA QUE RESPONDA A LA NUEVA RED
         # voy a recorrer la red desde el último elemento, para cada cardinalidad voy a verificar primero las relaciones
         # de movimiento de 1 st.
         # luego se verifica la inclusión en los de siguiente cardinalidad. Esto ocurre entre 3 y 11.
-        for cardin in range(3, 11):
+        for cardin in range(1, 11):
             first_cardin = self.first_card(cardin)
             last_cardin = self.last_card(cardin)
+            # Si la primera y última son iguales no hacer nada
             # comparación con los de misma cardinalidad
             for j in range(first_cardin, last_cardin):
                 for k in range(first_cardin, last_cardin):
@@ -411,7 +412,13 @@ class RedTransitiva:
             writer.writerow(i)
         ofile.close()
 
-'''
+
+'''a = RedTransitiva()
+a.cargar_red()
+#a.armar_red()
+a.construir_matriz()
+
+
 a = RedTransitiva()
 a.cargar_matriz()
 print(a.obtener_valor_en_matriz('7-12', '6-20'))

@@ -157,3 +157,5 @@ print("La red de relaciones se está cargando...")
 red = An.RedTransitiva()
 red.cargar_matriz()
 print("red cargada")
+
+print(len(red.matriz))
