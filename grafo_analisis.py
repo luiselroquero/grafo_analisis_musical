@@ -121,7 +121,8 @@ class GrafoAnalisis:
         if ruta != '':
             try:
                 self.archivo = converter.parse(ruta)
-                self.listado = self.archivo.flat.notes.stream()
+                a = self.archivo.flat.chordify()
+                self.listado = a.flat.notes.stream()
             except ValueError:
                 print("no es un tipo de archivo válido")
         else:
@@ -603,3 +604,8 @@ fibrasA.cargar_archivo()
 fibrasA.generar_grafo()
 fibrasA.agregar_matriz_aux(fibrasA.buscar_relaciones_cualidad(), "cualidad")
 fibrasA.exportar_tendencia_q("fibrasA_")'''
+
+a = GrafoAnalisis()
+a.cargar_archivo()
+a.generar_grafo()
+a.exportar_grafo()
