@@ -581,31 +581,4 @@ class GrafoAnalisis:
             writer.writerow(s)
         ofile.close()
 
-'''fibrasA = GrafoAnalisis()
-fibrasB1 = GrafoAnalisis()
-fibrasB2 = GrafoAnalisis()
-fibrasC = GrafoAnalisis()
-fibrasA.abrir_red()
-fibrasA.agregar_matriz_aux(fibrasA.buscar_relaciones_cualidad(), "cualidad")
-fibrasA.exportar_matriz_aux(0)
 
-fibrasB1.abrir_red()
-fibrasB2.abrir_red()
-fibrasC.abrir_red()
-fibrasA.unir_con_grafo(fibrasB1)
-fibrasA.unir_con_grafo(fibrasB2)
-fibrasA.unir_con_grafo(fibrasC)
-fibrasA.exportar_grafo("fibras_totalidad")
-
-'''
-'''
-fibrasA = GrafoAnalisis()
-fibrasA.cargar_archivo()
-fibrasA.generar_grafo()
-fibrasA.agregar_matriz_aux(fibrasA.buscar_relaciones_cualidad(), "cualidad")
-fibrasA.exportar_tendencia_q("fibrasA_")'''
-
-a = GrafoAnalisis()
-a.cargar_archivo()
-a.generar_grafo()
-a.exportar_grafo()
