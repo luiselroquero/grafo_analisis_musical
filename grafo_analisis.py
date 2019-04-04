@@ -479,7 +479,7 @@ class GrafoAnalisis:
                 'elementos': vertice.elementos,
                 'permutacion': vertice.permutacion,
                 'conexiones': self.matriz_adyacencia[vertice.id],
-                'direcciones': self.matriz_adyacencia[vertice.id],
+                'direcciones': self.matriz_incidencia[vertice.id],
                 'referencias': self.referencias,
                 'aristas': self.aristas_base
             }
