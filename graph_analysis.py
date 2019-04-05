@@ -211,7 +211,7 @@ class GraphAnalysis:
         for j in range(len(self.list)):
             answer = self.confirm_inclusion(self.list[j])
             if answer == -1:
-                self.generate_node(self.nodes[j], counter)
+                self.generate_node(self.list[j], counter)
                 self.references.append(counter)
                 counter = counter + 1
             else:
