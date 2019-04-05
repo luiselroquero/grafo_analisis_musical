@@ -530,7 +530,7 @@ class GraphAnalysis:
         row3 = []
         row4 = []
         for arista in self.edges_base:
-            info = self.edges_base[0].matriz[arista[0]][arista[1]]
+            info = self.edges_base[0].matrix[arista[0]][arista[1]]
             if len(info) > 2:
                 row1.append(info[0])
                 row2.append(info[1])
