@@ -192,8 +192,8 @@ class GraphAnalysis:
         for k in range(len(self.nodes)):
             row = []
             for j in range(len(self.edges_base)):
-                if self.nodes[k].id in self.nodes[j]:
-                    if self.nodes[k].id == self.nodes[j][0]:
+                if self.nodes[k].id in self.edges_base[j]:
+                    if self.nodes[k].id == self.edges_base[j][0]:
                         row.append(-1)
                     else:
                         row.append(1)
