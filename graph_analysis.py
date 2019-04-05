@@ -150,7 +150,7 @@ class GraphAnalysis:
         answer = -1
         set_compare = set_u.normalOrder
         for k in range(len(self.nodes)):
-            if set_compare == self.nodes[k].elementos:
+            if set_compare == self.nodes[k].elements:
                 answer = k
                 break
         return answer
